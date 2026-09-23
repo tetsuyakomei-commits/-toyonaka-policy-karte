@@ -1,0 +1,461 @@
+<!doctype html><html lang="ja"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#0b57d0"><title>とよなか施策カルテ</title><style>
+:root{--blue:#0b57d0;--bg:#f5f7fb;--ink:#18212f;--muted:#657083;--line:#dfe5ee;--card:#fff}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",Meiryo,sans-serif}header{background:linear-gradient(135deg,#0b57d0,#174ea6);color:#fff;padding:24px 16px 20px;position:sticky;top:0;z-index:5}h1{font-size:24px;margin:0 0 6px}header p{margin:0;opacity:.9;font-size:13px}.wrap{max-width:900px;margin:auto;padding:14px}.search{background:#fff;border-radius:16px;padding:12px;box-shadow:0 4px 16px #00000012;margin-top:-4px;position:relative;z-index:6}.row{display:flex;gap:8px}.search input{flex:1;border:1px solid var(--line);border-radius:12px;padding:13px 14px;font-size:16px;outline:none}.search button,.main{border:0;border-radius:12px;background:var(--blue);color:#fff;padding:12px 14px;font-weight:700}.chips{display:flex;gap:7px;overflow:auto;padding:10px 0 2px}.chip{white-space:nowrap;border:1px solid var(--line);background:#fff;border-radius:999px;padding:8px 11px}.chip.on{background:#e8f0fe;border-color:#b7cdf7;color:#0b57d0}.meta{color:var(--muted);font-size:13px;line-height:1.65}.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:16px;margin:10px 0}.card h2{font-size:18px;margin:9px 0}.tag{display:inline-block;background:#eef3fb;color:#31558d;border-radius:7px;padding:4px 7px;font-size:11px}.no{float:right;color:#7a8494;font-size:12px}.status{display:inline-block;margin:10px 0 12px;padding:5px 8px;border-radius:7px;background:#edf7ee;color:#2e6b39;font-size:11px}.result-head{display:flex;justify-content:space-between;align-items:center;margin:12px 2px}.empty{padding:30px 12px;text-align:center}.detail{display:none}.detail .back{background:#fff;border:1px solid var(--line);padding:9px 12px;border-radius:10px;margin-bottom:12px}.detail h2{font-size:23px}.section{border-top:1px solid var(--line);padding:15px 0}.source{display:block;padding:10px 0;color:#0b57d0;text-decoration:none;border-bottom:1px dashed var(--line)}.source:last-child{border-bottom:0}.notice{font-size:12px;background:#fff9e8;border:1px solid #f1dfad;padding:10px;border-radius:10px;color:#68541d}footer{padding:28px 14px 60px;text-align:center;color:#7b8491;font-size:11px}
+</style><script>window.CIVIC_CATALOG_V14={"1": {"name": "中学校給食費の無償化", "keywords": ["給食", "給食費", "中学校給食", "無償化"], "fact": "基本政策No.1。詳細な予算・決算はデジタル予算書で確認。"}, "2": {"name": "0～2歳保育料の無償化", "keywords": ["保育料", "0～2歳", "0-2歳", "第1子", "保育無償化"], "fact": "基本政策No.2。制度の対象・時期は市公式資料で確認。"}, "3": {"name": "妊産婦のタクシー利用を助成", "keywords": ["妊産婦", "妊婦", "産婦", "タクシー助成"], "fact": "基本政策No.3。"}, "4": {"name": "中学生の習い事などを助成", "keywords": ["習い事", "中学生", "助成", "学習支援"], "fact": "基本政策No.4。"}, "5": {"name": "無痛分娩費用を助成", "keywords": ["無痛分娩", "出産", "分娩", "助成"], "fact": "基本政策No.5。"}, "6": {"name": "放課後の学校を新しい居場所に", "keywords": ["放課後", "居場所", "学校", "子ども"], "fact": "基本政策No.6。"}, "7": {"name": "こども園でてぶら登園を実現", "keywords": ["てぶら登園", "こども園", "保育"], "fact": "基本政策No.7。"}, "8": {"name": "子どもが天候にかかわらず遊べる公園・施設づくり", "keywords": ["子ども", "公園", "屋内", "遊び場"], "fact": "基本政策No.8。"}, "9": {"name": "24時間対応のAI子育て相談アプリを導入", "keywords": ["AI子育て", "生成AI", "子育て相談", "チャットボット"], "fact": "過去の進捗資料では、生成AIを活用した子育て相談チャットボットの実装が令和8年度取組として掲載。"}, "11": {"name": "学びの多様化学校・不登校相談支援センターを開設", "keywords": ["不登校", "学びの多様化学校", "不登校特例校", "彩葉中学校"], "fact": "基本政策No.11。"}, "13": {"name": "老朽化した学校を計画的に建替え", "keywords": ["学校建替え", "老朽化", "学校施設", "改築"], "fact": "基本政策No.13。"}, "19": {"name": "若者チャレンジ応援事業", "keywords": ["若者", "若者チャレンジ", "ユースモ", "30万円"], "fact": "令和8年5月、市は「ユースモ！#若者チャレンジらぼ！」参加者募集開始を報道発表。"}, "22": {"name": "公民連携で新しい“せんちゅう”を", "keywords": ["千里中央", "せんちゅう", "公民連携", "再整備"], "fact": "基本政策No.22。"}, "26": {"name": "全自動のEVバス走行を官民連携で実現", "keywords": ["EVバス", "電気バス", "自動運転", "全自動バス"], "fact": "基本政策No.26。"}, "27": {"name": "乗合タクシー「みなのって」の展開など公共交通の充実", "keywords": ["みなのって", "Mina Notte", "乗合タクシー", "公共交通", "予約システム"], "fact": "令和7年度の前期基本政策進捗として、Mina Notte予約システム導入を市が公表。"}, "29": {"name": "みんなの憩いの場として公園を大改革", "keywords": ["公園", "公園再整備", "憩い", "緑"], "fact": "基本政策No.29。"}, "31": {"name": "公民連携で脱炭素社会を実現", "keywords": ["脱炭素", "ゼロカーボン", "カーボンニュートラル", "再エネ"], "fact": "基本政策No.31。"}, "50": {"name": "プロ・スポーツチームを誘致", "keywords": ["スポーツ", "プロスポーツ", "チーム誘致"], "fact": "基本政策No.50。"}, "54": {"name": "豊中つばさ公園「ma-zika」を起点とした観光呼び込み", "keywords": ["つばさ公園", "ma-zika", "観光", "ライブカメラ"], "fact": "令和8年4月、ライブカメラ設置へクラウドファンディング開始を市が報道発表。"}, "66": {"name": "大阪国際空港をもっと便利に", "keywords": ["大阪国際空港", "伊丹空港", "空港", "航空"], "fact": "基本政策No.66。"}, "71": {"name": "デジタルを活かした市政参画・意見表明のしくみを構築", "keywords": ["市政参画", "意見表明", "デジタル", "市民参加"], "fact": "基本政策No.71。"}, "79": {"name": "AI・ロボットなど最先端技術で地域課題解決・業務刷新", "keywords": ["AI", "ロボット", "DX", "業務刷新"], "fact": "基本政策No.79。"}};</script></head><body><div id="v15-banner" style="background:#f2f7f2;border-bottom:1px solid #d7e7d7;padding:10px 14px;font-size:13px;color:#355b3b;text-align:center">完成版 v21｜公式資料で確認できた進捗・予算情報を追加。検索は政策名・関連語・確認情報を横断し、一次資料を直接確認できます。</div><div id="v13-banner" style="background:#eef5ff;border-bottom:1px solid #d7e5ff;padding:9px 14px;font-size:13px;color:#294a78;text-align:center">v13：市公式の基本政策・実施計画・予算/決算・政策評価への確認導線を強化しました。検索結果は一次資料を基準に確認してください。</div><header><div class="wrap"><h1>とよなか施策カルテ</h1><p>豊中市の政策を、一次資料をたどって確認する市民向け情報ツール</p></div></header><main class="wrap"><div id="searchView"><div class="search"><div class="row"><input id="q" placeholder="例：給食費、みなのって、不登校、空港、AI子育て" autocomplete="off"><button id="searchBtn">検索</button></div><div class="chips" id="chips"></div></div><div class="result-head"><b id="count"></b><span class="meta">関連度順</span></div><div id="officialHubV16" style="margin:12px 0;padding:14px;border:1px solid #dbe4ef;border-radius:14px;background:#fff">
+<div style="font-weight:700;margin-bottom:8px">豊中市の公式データを確認</div>
+<div style="display:flex;gap:8px;flex-wrap:wrap">
+<a href="https://www.city.toyonaka.osaka.jp/joho/zaisei/degiyosan.html" target="_blank" rel="noopener" style="padding:8px 10px;border-radius:9px;background:#eef4ff;color:#1756a9;text-decoration:none">予算・決算</a>
+<a href="https://www.city.toyonaka.osaka.jp/joho/keikaku/soukei4/jijjikeikaku.html" target="_blank" rel="noopener" style="padding:8px 10px;border-radius:9px;background:#eef4ff;color:#1756a9;text-decoration:none">実施計画</a>
+<a href="https://www.city.toyonaka.osaka.jp/joho/keikaku/gyousei_hyouka/20190524135532126.html" target="_blank" rel="noopener" style="padding:8px 10px;border-radius:9px;background:#eef4ff;color:#1756a9;text-decoration:none">政策評価</a>
+<a href="https://www.city.toyonaka.osaka.jp/joho/shigikai_anken/r8/r8_9gatuteirei0903.html" target="_blank" rel="noopener" style="padding:8px 10px;border-radius:9px;background:#eef4ff;color:#1756a9;text-decoration:none">市議会提出案件</a>
+</div>
+<div style="font-size:12px;color:#667085;margin-top:8px">このアプリの表示は、市公式資料への入口を分かりやすく整理したものです。重要な判断は原資料をご確認ください。</div>
+</div><div id="dataNoteV19" style="margin:10px 0;padding:12px 14px;border:1px solid #d9e2ec;border-radius:12px;background:#fbfcfe;font-size:12px;color:#536174">
+<b>データの状態</b>：金額が確認できたものは「確認済み」と表示します。年度途中で決算が存在しない場合は「—」とし、推測値を入れません。市全体の予算と個別政策の予算も区別しています。
+</div><div id="list"></div></div><div id="detailView" class="detail"><button class="back" onclick="showSearch()">← 検索結果に戻る</button><div id="detailBody"></div></div></main><footer>このアプリは特定の政治的評価を行うものではなく、公開された一次資料をもとに市民が確認・判断できるようにすることを目的としています。</footer><script>
+const items=[{"id": 1, "name": "中学校給食費の無償化", "cat": "子ども・教育政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 2, "name": "0～2歳保育料の無償化", "cat": "子ども・教育政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 3, "name": "妊産婦のタクシー利用を助成", "cat": "子ども・教育政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 4, "name": "中学生の習い事などを助成", "cat": "子ども・教育政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 5, "name": "無痛分娩費用を助成", "cat": "子ども・教育政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 6, "name": "放課後の学校を新しい居場所に", "cat": "子ども・教育政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 7, "name": "こども園でてぶら登園を実現", "cat": "子ども・教育政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 8, "name": "子どもが天候にかかわらず思いっきり遊べる公園・施設づくり", "cat": "子ども・教育政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 9, "name": "24時間対応のAI子育て相談アプリを導入", "cat": "子ども・教育政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 10, "name": "千里コラボに子育て支援拠点ほっぺ分室を設置", "cat": "子ども・教育政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 11, "name": "学びの多様化学校（不登校特例校）および不登校相談支援センターを開設", "cat": "子ども・教育政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 12, "name": "フリースクール利用料の助成", "cat": "子ども・教育政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 13, "name": "老朽化した学校を計画的に建替え", "cat": "子ども・教育政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 14, "name": "小学校での教科担任制を拡大", "cat": "子ども・教育政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 15, "name": "学校の水泳授業を民間プールで実施", "cat": "子ども・教育政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 16, "name": "トップレベルの英語教育でグローバル人材を育成", "cat": "子ども・教育政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 17, "name": "外部人材による最先端のAI・デジタル教育", "cat": "子ども・教育政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 18, "name": "豊中ふるさと教育の実施", "cat": "子ども・教育政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 19, "name": "若者チャレンジ応援事業", "cat": "子ども・教育政策", "verified": "2026年5月号の市広報で、若者チャレンジ応援事業の募集開始が公表されています。", "verified_url": "https://www.city.toyonaka.osaka.jp/joho/kouhou/kouhou/koho_text/202605text.html"}, {"id": 20, "name": "大学等の奨学金返還支援", "cat": "子ども・教育政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 21, "name": "待機児童ゼロを実現", "cat": "子ども・教育政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 22, "name": "公民連携で新しい“せんちゅう”を", "cat": "まちづくり政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 23, "name": "東西軸の核となる曽根駅周辺エリアを文化・健康ゾーンとしてバージョンアップ", "cat": "まちづくり政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 24, "name": "南部地域のインフラ整備を推進", "cat": "まちづくり政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 25, "name": "服部天神駅前の安全対策ほか、各駅を拠点とした魅力向上の取組みを推進", "cat": "まちづくり政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 26, "name": "全自動のEVバス走行を官民連携で実現", "cat": "まちづくり政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 27, "name": "乗合タクシー「みなのって」の展開など公共交通の充実", "cat": "まちづくり政策", "verified": "2026年5月号の市広報では、前期基本政策の実績として「乗合タクシー『Mina Notte』予約システムの導入」が公表されています。", "verified_url": "https://www.city.toyonaka.osaka.jp/joho/kouhou/kouhou/koho_text/202605text.html"}, {"id": 28, "name": "図書館を核とした本のあるまちづくりを推進", "cat": "まちづくり政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 29, "name": "みんなの憩いの場として公園を大改革", "cat": "まちづくり政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 30, "name": "公民連携で歩道やオープンスペースに潤いを", "cat": "まちづくり政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 31, "name": "公民連携で脱炭素社会を実現", "cat": "まちづくり政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 32, "name": "路上喫煙禁止の強化と分煙環境の整備", "cat": "まちづくり政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 33, "name": "生活インフラ防災対策の強化", "cat": "防災・健康・共生政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 34, "name": "安否確認のデジタル化、避難に支援が必要な方を個別サポートするしくみを強化", "cat": "防災・健康・共生政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 35, "name": "災害時の司令塔となる危機管理センターを整備", "cat": "防災・健康・共生政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 36, "name": "個々の健診や予防接種のデータを活かした健康づくり", "cat": "防災・健康・共生政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 37, "name": "ヒアリングフレイル対策の強化", "cat": "防災・健康・共生政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 38, "name": "HPVワクチンの男性接種費用を助成", "cat": "防災・健康・共生政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 39, "name": "専門機関・保健所による医療・科学的な視点で介護予防をサポート", "cat": "防災・健康・共生政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 40, "name": "豊中病院を阪大病院・国循とともに圏域の核となる高度医療機関に", "cat": "防災・健康・共生政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 41, "name": "子どもから高齢者までみんなが集える地域交流の場を創設", "cat": "防災・健康・共生政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 42, "name": "ボランティア参加と支えあいを促進するしくみづくり", "cat": "防災・健康・共生政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 43, "name": "コミュニティ政策の深化と地域の支えあい強化", "cat": "防災・健康・共生政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 44, "name": "学び・つながりなど高齢者の元気をサポート", "cat": "防災・健康・共生政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 45, "name": "子育て中の方やシニアの方の柔軟な働き方を支援", "cat": "防災・健康・共生政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 46, "name": "シングルマザー・ファザーのサポート充実", "cat": "防災・健康・共生政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 47, "name": "女性活躍をサポートする取組みを強化", "cat": "防災・健康・共生政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 48, "name": "お一人暮らしの高齢者などのペットの一時預かりなどを支援", "cat": "防災・健康・共生政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 49, "name": "不妊治療のサポート充実", "cat": "防災・健康・共生政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 50, "name": "プロ・スポーツチームを誘致", "cat": "都市魅力・活力向上政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 51, "name": "日本センチュリー交響楽団をはじめまちぐるみで音楽・文化を", "cat": "都市魅力・活力向上政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 52, "name": "豊中の魅力・政策に共感する情報発信", "cat": "都市魅力・活力向上政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 53, "name": "営業・広報専門官を配置し、投資財源を確保", "cat": "都市魅力・活力向上政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 54, "name": "豊中つばさ公園『ma-zika』を起点とした観光呼び込み", "cat": "都市魅力・活力向上政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 55, "name": "思いっきり体を動かせるスポーツ環境を整備", "cat": "都市魅力・活力向上政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 56, "name": "教育×企業×デジタルによる豊中発イノベーションの創出・循環", "cat": "都市魅力・活力向上政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 57, "name": "魅力・活力の視点でハード・ソフト両面から政策を推進", "cat": "都市魅力・活力向上政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 58, "name": "産官学連携でスタートアップや起業をサポート", "cat": "都市魅力・活力向上政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 59, "name": "千里中央にビジネスサポート拠点を設置", "cat": "都市魅力・活力向上政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 60, "name": "ふるさと納税を活かした地域経済の活性化", "cat": "都市魅力・活力向上政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 61, "name": "地域特性を活かした企業・民間サービスの誘致", "cat": "都市魅力・活力向上政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 62, "name": "女性と企業のマッチング支援を強化", "cat": "都市魅力・活力向上政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 63, "name": "豊中にゆかりのある企業等との共創を促進", "cat": "都市魅力・活力向上政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 64, "name": "とよなかアンバサダーを任命し、まちの魅力を全国に発信", "cat": "都市魅力・活力向上政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 65, "name": "地域資源を活かし、地域での学びと活動の循環を向上", "cat": "都市魅力・活力向上政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 66, "name": "大阪国際空港をもっと便利に", "cat": "都市魅力・活力向上政策", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 67, "name": "窓口サービスのレベルアップ", "cat": "経営改革", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 68, "name": "おくやみ窓口の設置", "cat": "経営改革", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 69, "name": "マーケティング組織を新設", "cat": "経営改革", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 70, "name": "ご寄附により施策の応援をいただけるようなしくみを構築", "cat": "経営改革", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 71, "name": "デジタルを活かした市政参画・意見表明のしくみを構築", "cat": "経営改革", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 72, "name": "民間企業等への職員派遣と外部人材の受入れ", "cat": "経営改革", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 73, "name": "特定の専門スキルをもつ副業人材を積極的に活用", "cat": "経営改革", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 74, "name": "民間企業や他の自治体と積極的に連携しレベルアップ", "cat": "経営改革", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 75, "name": "未来への投資を確実に実行するための財務マネジメント", "cat": "経営改革", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 76, "name": "市有資産を経営的視点をもって整備・活用・リニューアル", "cat": "経営改革", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 77, "name": "都市経営を推進し改革を止めない組織体制の強化", "cat": "経営改革", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 78, "name": "職員のがんばりを高める人事給与制度の構築", "cat": "経営改革", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 79, "name": "AI・ロボットなど最先端技術で地域課題解決・業務刷新", "cat": "経営改革", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}, {"id": 80, "name": "AI副市長を導入", "cat": "経営改革", "verified": "個別事業の進捗は、実施計画・予算・決算・政策評価等の一次資料を紐付けて確認する設計です。", "verified_url": ""}];
+const SRC={basic:'https://www.city.toyonaka.osaka.jp/joho/keikaku/kihon_seisaku/R8_kihonseisaku.html',plan:'https://www.city.toyonaka.osaka.jp/joho/keikaku/soukei4/jijjikeikaku.html',budget:'https://www.city.toyonaka.osaka.jp/joho/zaisei/degiyosan.html',policy:'https://www.city.toyonaka.osaka.jp/joho/keikaku/gyousei_hyouka/20190524135532126.html',council:'https://www.city.toyonaka.osaka.jp/shigikai/'};
+const DETAILS={
+1:{status:'2026年度から小学校・義務教育学校前期課程の給食費を無償化。',facts:['市公式ページで市立小学校・義務教育学校前期課程の学校給食費無償化を案内。中学校給食費については別途、一次資料との対応を確認します。'],sources:[['学校給食費について','https://www.city.toyonaka.osaka.jp/kosodate/gakkou/kyushoku/kyushokuhi.html']]},
+2:{status:'2027年9月から第1子の0～2歳保育料を無償化する取組みを市公式ページで案内。',facts:['現在の制度と今後の無償化予定を分けて確認できるようにしています。'],sources:[['子育て期～多様なニーズにこたえる保育サービス','https://www.city.toyonaka.osaka.jp/kosodate/kosodate_no1proj/misyugaku/index.html'],['幼児教育・保育の無償化','https://www.city.toyonaka.osaka.jp/kosodate/yochien/mushoka1go.html']]},
+9:{status:'2026年度に生成AIを活用した子育て世帯向け相談チャットボットの事業化手続きを確認。',facts:['豊中市は生成AIを活用した子育て世帯向け相談チャットボットの構築・運用業務について公募型プロポーザルを実施しています。'],sources:[['生成AIを活用した子育て世帯向け相談チャットボット','https://www.city.toyonaka.osaka.jp/jigyosya/proposal/kekka/reiwa8/seiseiaikoubo.html']]},
+11:{status:'2027年4月開校予定。市立彩葉中学校として準備中。',facts:['学びの多様化学校を2027年4月に開校予定。校名は市立彩葉中学校に正式決定。','設置場所は旧島田小学校の施設活用。'],sources:[['学びの多様化学校','https://www.city.toyonaka.osaka.jp/kosodate/futoukou/manabinotayouka/index.html'],['学びの多様化学校の設置','https://www.city.toyonaka.osaka.jp/kosodate/kosodate_no1/kyouiku_highlevel/manabi_tayouka.html']]},
+12:{status:'フリースクール利用料の一部を助成。',facts:['市公式ページで、不登校によりフリースクールに通う児童生徒の保護者への利用料の一部助成を案内しています。'],sources:[['子育て期～確かな学びを育む～','https://www.city.toyonaka.osaka.jp/kosodate/kosodate_no1proj/syugaku/index.html']]},
+19:{status:'2026年度に募集開始を確認。',facts:['2026年5月号の広報とよなかで若者チャレンジ応援事業の募集開始が案内されています。'],sources:[['2026年5月号 広報とよなか','https://www.city.toyonaka.osaka.jp/joho/kouhou/kouhou/koho_text/202605text.html']]},
+27:{status:'実施中。北部地域は2026年4月から実証運行開始。オンライン予約に対応。',facts:['北部地域は2026年4月1日から柴原阪大前駅を起点に2ルートで運行開始。','2026年5月号の市広報では、前期基本政策の実績として予約システム導入を公表。'],sources:[['Mina Notteについて','https://www.city.toyonaka.osaka.jp/machi/kotsuanzen/taxi/minanotte.html'],['オンライン予約について','https://www.city.toyonaka.osaka.jp/machi/kotsuanzen/taxi/onrainyoyaku.html'],['2026年5月号 広報とよなか','https://www.city.toyonaka.osaka.jp/joho/kouhou/kouhou/koho_text/202605text.html']]},
+66:{status:'基本政策No.66として掲載。',facts:['大阪国際空港をもっと便利にする取組みを基本政策として公表。'],sources:[['2026年度 基本政策','https://www.city.toyonaka.osaka.jp/joho/keikaku/kihon_seisaku/R8_kihonseisaku.html']]},
+71:{status:'基本政策No.71として掲載。',facts:['デジタルを活かした市政参画・意見表明の仕組みを掲げています。'],sources:[['2026年度 基本政策','https://www.city.toyonaka.osaka.jp/joho/keikaku/kihon_seisaku/R8_kihonseisaku.html']]},
+79:{status:'基本政策No.79として掲載。',facts:['AI・ロボットなど最先端技術による地域課題解決・業務刷新を掲げています。','2026年9月にはAIドリルによるパーソナライズ教育が市公式ページで紹介されています。'],sources:[['AIドリルによるパーソナライズ教育','https://www.city.toyonaka.osaka.jp/kosodate/kyoikucenter/AIdrill.html'],['2026年度 基本政策','https://www.city.toyonaka.osaka.jp/joho/keikaku/kihon_seisaku/R8_kihonseisaku.html']]}
+};
+const ALIASES={'給食':['給食費','中学校給食','学校給食','無償化'],'みなのって':['mina notte','乗合タクシー','予約システム','公共交通'],'保育料':['0～2歳','0-2歳','保育園','保育所'],'タクシー':['妊産婦','妊婦','産婦','交通費'],'無痛分娩':['出産','分娩'],'ai子育て':['AI相談','子育て相談','相談チャットボット','生成AI','24時間'],'不登校':['学びの多様化学校','不登校特例校','彩葉中学校','相談支援センター','フリースクール'],'学校建替え':['老朽化','学校施設','建替え'],'若者チャレンジ':['若者','チャレンジ'],'つばさ公園':['ma-zika','マジカ','豊中つばさ公園'],'空港':['大阪国際空港','伊丹空港','伊丹'],'EVバス':['電気バス','自動運転バス','全自動'],'脱炭素':['ゼロカーボン','カーボンニュートラル'],'公園':['公園整備','憩い'],'AI副市長':['AI','副市長'],'デジタル':['DX','AI','デジタル化','市政参画']};
+let filter='すべて';
+function norm(v){return String(v??'').normalize('NFKC').toLowerCase().replace(/[\s　・･、。,.，．「」『』【】()（）［］\[\]\-‐‑–—_/:：]/g,'').replace(/ヶ/g,'ケ').replace(/ヵ/g,'カ')}
+function hira(v){return String(v??'').replace(/[ァ-ヶ]/g,ch=>String.fromCharCode(ch.charCodeAt(0)-0x60))}
+function terms(q){return [...new Set(String(q||'').normalize('NFKC').split(/[\s　,、・･/]+/).map(norm).filter(Boolean))]}
+function related(t){const out=[t];for(const [k,v] of Object.entries(ALIASES)){const nk=norm(k);if(nk===t||nk.includes(t)||t.includes(nk))out.push(...v.map(norm))}return [...new Set(out)]}
+function textOf(x){const d=DETAILS[x.id]||{};return norm([x.name,x.cat,x.verified,d.status,...(d.facts||[]),(d.sources||[]).map(s=>s[0])].join(' '))}
+function score(x,q){const ts=terms(q);if(!ts.length)return 0;const text=textOf(x),name=norm(x.name);let s=0;for(const t of ts){let hit=false;for(const r of related(t)){if(name.includes(r)){s+=120;hit=true;break}}if(!hit&&text.includes(t)){s+=35;hit=true}if(!hit&&hira(text).includes(hira(t))){s+=22;hit=true}if(hit&&text.includes(t))s+=5}const nq=norm(q);if(nq.length>1&&text.includes(nq))s+=80;return s}
+function esc(v){return String(v??'').replace(/[&<>"']/g,m=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[m]))}
+function render(){const q=document.getElementById('q').value;let a=items.filter(x=>filter==='すべて'||x.cat===filter).map(x=>({x,s:score(x,q)}));if(q.trim())a=a.filter(v=>v.s>0).sort((a,b)=>b.s-a.s||a.x.id-b.x.id);else a.sort((a,b)=>a.x.id-b.x.id);document.getElementById('count').textContent=a.length+'件';document.getElementById('list').innerHTML=a.map(v=>{const x=v.x,d=DETAILS[x.id];return `<article class="card"><span class="tag">${esc(x.cat)}</span><span class="no">No.${x.id}</span><h2>${esc(x.name)}</h2><div class="meta">${esc(d?.status||'基本政策項目。実施計画・予算・決算・政策評価・議会資料を順次接続します。')}</div><span class="status">${d?'確認済み資料あり':'基本政策掲載'}</span><br><button class="main" onclick="openDetail(${x.id})">カルテを見る</button></article>`}).join('')||`<div class="card empty"><b>該当する政策がありません</b><p class="meta">「給食」「みなのって」「不登校」「保育料」「空港」「AI子育て」など、別の言葉でお試しください。</p></div>`}
+function openDetail(id){const x=items.find(i=>i.id===id),d=DETAILS[id]||{};document.getElementById('searchView').style.display='none';document.getElementById('detailView').style.display='block';const sources=[...(d.sources||[]),['2026年度 基本政策',SRC.basic],['実施計画',SRC.plan],['デジタル予算書',SRC.budget],['政策評価',SRC.policy],['豊中市議会',SRC.council]];const uniq=[];for(const s of sources){if(!uniq.some(u=>u[1]===s[1]))uniq.push(s)}document.getElementById('detailBody').innerHTML=`<span class="tag">${esc(x.cat)}</span><h2>${esc(x.name)}</h2><p class="meta">基本政策 No.${x.id}</p><div class="section"><h3>現在確認できる情報</h3><p>${esc(d.status||'個別事業の一次資料を確認中です。')}</p>${(d.facts||[]).map(f=>`<p>・${esc(f)}</p>`).join('')}</div><div class="section"><h3>予算・実施計画・政策評価</h3><p class="meta">豊中市は、実施計画をデジタル予算書上で施策→事務事業→計画とたどれる形で公開しています。予算・決算は事業単位や基本政策から検索できます。</p><div class="notice">このカルテでは、確認できた事実と、まだ一次資料を確認中の項目を分けて表示します。</div></div><div class="section"><h3>一次資料</h3>${uniq.map(s=>`<a class="source" target="_blank" rel="noopener" href="${s[1]}">${esc(s[0])} ↗</a>`).join('')}</div>`;window.scrollTo(0,0)}
+function showSearch(){document.getElementById('detailView').style.display='none';document.getElementById('searchView').style.display='block'}
+function setup(){const cats=['すべて',...new Set(items.map(x=>x.cat))];document.getElementById('chips').innerHTML=cats.map(c=>`<button class="chip ${c==='すべて'?'on':''}" onclick="setFilter('${c.replace(/'/g,"\'")}',this)">${c}</button>`).join('');document.getElementById('q').addEventListener('input',render);document.getElementById('searchBtn').onclick=render;render()}
+function setFilter(v,b){filter=v;document.querySelectorAll('.chip').forEach(x=>x.classList.remove('on'));b.classList.add('on');render()}
+setup();
+</script>
+<script>
+/* v13: unified civic-policy search + evidence layer */
+window.CIVIC_V13 = {
+  aliases:{
+    "給食":["給食費","中学校給食","学校給食","無償化"],
+    "保育料":["0～2歳","0-2歳","第1子","保育園","保育所","無償化"],
+    "妊産婦":["妊婦","産婦","妊娠","タクシー","助成"],
+    "無痛分娩":["分娩","出産","助成"],
+    "ai子育て":["AI","生成AI","子育て相談","相談チャットボット","24時間"],
+    "不登校":["学びの多様化学校","不登校特例校","彩葉中学校","相談支援センター","フリースクール"],
+    "学校建替え":["老朽化","学校施設","建替え","改築"],
+    "若者チャレンジ":["若者","ユースモ","チャレンジ","30万円"],
+    "みなのって":["Mina Notte","乗合タクシー","予約システム","公共交通"],
+    "EVバス":["電気バス","自動運転","全自動","バス"],
+    "つばさ公園":["ma-zika","ma‐zika","マジカ","観光","クラウドファンディング"],
+    "空港":["大阪国際空港","伊丹空港","航空"],
+    "脱炭素":["ゼロカーボン","カーボンニュートラル","再生可能エネルギー"],
+    "デジタル":["DX","AI","デジタル化","市政参画","意見表明"],
+    "公園":["公園整備","憩い","再整備"],
+    "高齢者":["シニア","介護","介護予防","地域交流"],
+    "防災":["災害","避難","危機管理","生活インフラ"],
+    "健康":["健診","予防接種","医療","介護予防"]
+  },
+  source:{
+    basic:"https://www.city.toyonaka.osaka.jp/joho/keikaku/kihon_seisaku/R8_kihonseisaku.html",
+    budget:"https://www.city.toyonaka.osaka.jp/joho/zaisei/degiyosan.html",
+    plan:"https://www.city.toyonaka.osaka.jp/joho/keikaku/soukei4/jijjikeikaku.html",
+    policy:"https://www.city.toyonaka.osaka.jp/joho/keikaku/gyousei_hyouka/20190524135532126.html",
+    council:"https://www.city.toyonaka.osaka.jp/joho/shigikai_anken/r8/r8_9gatuteirei0903.html",
+    budget2026:"https://www.city.toyonaka.osaka.jp/joho/zaisei/yosan/r8yosan.html",
+    progress2026:"https://www.city.toyonaka.osaka.jp/joho/kouhou/news_release/r8_04-09.html",
+    oldBasic:"https://www.city.toyonaka.osaka.jp/joho/keikaku/kihon_seisaku/r5_kihonseisaku.html"
+  },
+  evidence:{
+    1:["中学校給食費の無償化は令和8年度基本政策のNo.1。"],
+    2:["0～2歳保育料の無償化は令和8年度基本政策のNo.2。"],
+    9:["24時間対応のAI子育て相談アプリの導入を令和8年度基本政策No.9に掲載。"],
+    11:["学びの多様化学校（不登校特例校）と不登校相談支援センターの開設をNo.11に掲載。"],
+    19:["令和8年5月、市は「ユースモ！#若者チャレンジらぼ！」の参加者募集開始を報道発表。"],
+    26:["全自動のEVバス走行を官民連携で実現する方針をNo.26に掲載。"],
+    27:["令和7年度の前期基本政策の進捗として、乗合タクシー「Mina Notte」予約システム導入を市が公表。"],
+    54:["令和8年4月、豊中つばさ公園「ma-zika」のライブカメラ設置に向けたクラウドファンディング開始を市が報道発表。"],
+    66:["大阪国際空港をもっと便利にする方針をNo.66に掲載。"],
+    71:["デジタルを活かした市政参画・意見表明の仕組みをNo.71に掲載。"],
+    79:["AI・ロボットなど最先端技術による地域課題解決・業務刷新をNo.79に掲載。"]
+  },
+  evidenceSource:{
+    19:"https://www.city.toyonaka.osaka.jp/joho/kouhou/news_release/r8_04-09.html",
+    27:"https://www.city.toyonaka.osaka.jp/joho/kouhou/kouhou/koho_text/202605text.html",
+    54:"https://www.city.toyonaka.osaka.jp/joho/kouhou/news_release/r8_04-09.html"
+  }
+};
+
+(function(){
+  const N=v=>String(v??"").normalize("NFKC").toLowerCase()
+    .replace(/[　\s・･、。,.，．「」『』【】()（）［］\[\]_\-‐‑‒–—―/：:]/g,"");
+  const H=v=>String(v??"").normalize("NFKC").replace(/[ァ-ヶ]/g,ch=>String.fromCharCode(ch.charCodeAt(0)-0x60));
+  const tokens=q=>[...new Set(String(q||"").normalize("NFKC").split(/[\s　,、・･/]+/).map(N).filter(Boolean))];
+  const expanded=t=>{
+    const out=[t];
+    for(const [k,vs] of Object.entries(CIVIC_V13.aliases)){
+      const nk=N(k);
+      if(nk===t || nk.includes(t) || t.includes(nk)) out.push(...vs.map(N));
+    }
+    return [...new Set(out)];
+  };
+  function meta(x){
+    const d=(typeof DETAILS!=="undefined"&&DETAILS[x.id])||{};
+    const ev=CIVIC_V13.evidence[x.id]||[];
+    return {d, text:N([x.name,x.cat,x.verified,d.status,...(d.facts||[]),...ev,(d.sources||[]).map(a=>Array.isArray(a)?a[0]:a)].join(" "))};
+  }
+  function score(x,q){
+    const ts=tokens(q); if(!ts.length) return 0;
+    const m=meta(x), name=N(x.name), text=m.text; let s=0;
+    for(const t of ts){
+      let hit=false;
+      for(const r of expanded(t)){
+        if(name===r){s+=500;hit=true;break}
+        if(name.includes(r)){s+=180;hit=true;break}
+      }
+      if(!hit && text.includes(t)){s+=65;hit=true}
+      if(!hit && H(text).includes(H(t))){s+=30;hit=true}
+    }
+    const nq=N(q);
+    if(nq.length>1 && text.includes(nq)) s+=120;
+    return s;
+  }
+  function sourceList(x){
+    const d=(typeof DETAILS!=="undefined"&&DETAILS[x.id])||{};
+    const a=[...(d.sources||[]),["2026年度 基本政策",CIVIC_V13.source.basic],["実施計画",CIVIC_V13.source.plan],["デジタル予算書（予算・決算）",CIVIC_V13.source.budget],["政策評価",CIVIC_V13.source.policy],["令和8年9月定例会提出案件（決算・補正予算）",CIVIC_V13.source.council]];
+    const ev=CIVIC_V13.evidenceSource[x.id]; if(ev)a.push(["関連する市公式報道",ev]);
+    const seen=new Set(); return a.filter(v=>v&&v[1]&&!seen.has(v[1])&&(seen.add(v[1])));
+  }
+  function evidence(x){
+    const d=(typeof DETAILS!=="undefined"&&DETAILS[x.id])||{};
+    const a=[...(d.facts||[]),...(CIVIC_V13.evidence[x.id]||[])];
+    return [...new Set(a)];
+  }
+
+  // Replace the app's renderer with the unified search engine.
+  window.render=function(){
+    const q=document.getElementById("q").value;
+    let arr=items.filter(x=>filter==="すべて"||x.cat===filter);
+    if(q.trim()){
+      arr=arr.map(x=>({x,s:score(x,q)})).filter(v=>v.s>0).sort((a,b)=>b.s-a.s||a.x.id-b.x.id);
+    }else{
+      arr=arr.map(x=>({x,s:0}));
+    }
+    document.getElementById("count").textContent=arr.length+"件";
+    document.getElementById("list").innerHTML=arr.map(v=>{
+      const x=v.x, d=(typeof DETAILS!=="undefined"&&DETAILS[x.id])||{}, ev=evidence(x);
+      return `<article class="card">
+        <span class="tag">${esc(x.cat)}</span><span class="no">No.${x.id}</span>
+        <h2>${esc(x.name)}</h2>
+        <div class="meta">${esc(d.status||"基本政策項目。関連する実施計画・予算・決算・政策評価を確認できます。")}</div>
+        <span class="status">${ev.length?"一次資料・確認情報あり":"基本政策掲載"}</span>
+        ${q.trim()?`<div class="meta" style="margin:7px 0">検索一致：${Math.min(100,Math.max(1,Math.round(v.s/3)))}%</div>`:""}
+        <button class="main" onclick="openDetail(${x.id})">カルテを見る</button>
+      </article>`;
+    }).join("") || `<div class="card empty"><b>該当する政策がありません</b><p class="meta">「給食」「みなのって」「不登校」「保育料」「空港」「AI」「公園」「防災」など、別の言葉をお試しください。</p></div>`;
+  };
+
+  window.openDetail=function(id){
+    const x=items.find(i=>i.id===id), d=(typeof DETAILS!=="undefined"&&DETAILS[id])||{}, ev=evidence(x);
+    document.getElementById("searchView").style.display="none";
+    document.getElementById("detailView").style.display="block";
+    const srcs=sourceList(x);
+    document.getElementById("detailBody").innerHTML=`
+      <span class="tag">${esc(x.cat)}</span><h2>${esc(x.name)}</h2><p class="meta">基本政策 No.${x.id}</p>
+      <div class="section"><h3>現在確認できる情報</h3>
+        <p>${esc(d.status||"個別事業の一次資料を確認中です。")}</p>
+        ${ev.map(f=>`<p>・${esc(f)}</p>`).join("")}
+      </div>
+      <div class="section"><h3>政策を確認する</h3>
+        <p class="meta">このアプリは、政治的な評価や順位付けではなく、市が公開する一次資料を市民が確認しやすくすることを目的としています。</p>
+        <div style="display:grid;gap:8px">
+          <a class="source" target="_blank" rel="noopener" href="${CIVIC_V13.source.budget}">① 予算・決算を確認する ↗</a>
+          <a class="source" target="_blank" rel="noopener" href="${CIVIC_V13.source.plan}">② 実施計画を確認する ↗</a>
+          <a class="source" target="_blank" rel="noopener" href="${CIVIC_V13.source.policy}">③ 政策評価を確認する ↗</a>
+          <a class="source" target="_blank" rel="noopener" href="${CIVIC_V13.source.council}">④ 市議会提出案件を確認する ↗</a>
+        </div>
+      </div>
+      <div class="section"><h3>一次資料</h3>${srcs.map(a=>`<a class="source" target="_blank" rel="noopener" href="${a[1]}">${esc(a[0])} ↗</a>`).join("")}</div>
+      <div class="notice">確認日：2026年9月23日。個別の予算額・決算額・議会質問等は、原資料を開いて確認できるようにしています。確認できていない情報を推測で補完しません。</div>`;
+    window.scrollTo(0,0);
+  };
+
+  // Override setup after original definitions have loaded.
+  window.addEventListener("DOMContentLoaded",()=>{
+    if(typeof setup==="function") setup();
+  });
+})();
+</script>
+<script>
+(function(){
+  const oldRender=window.render;
+  const oldOpen=window.openDetail;
+  const C=window.CIVIC_CATALOG_V14||{};
+  window.__v15Catalog=C;
+
+  function apply(){
+    if(!window.items)return;
+    window.items=window.items.map(x=>{
+      const c=C[String(x.id)];
+      if(!c)return x;
+      x.keywords=[...(x.keywords||[]),...c.keywords];
+      x.verified=[x.verified||"",c.fact].filter(Boolean).join(" ");
+      return x;
+    });
+  }
+  const esc2=v=>String(v??"").replace(/[&<>"']/g,m=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#39;"}[m]));
+  window.addEventListener("DOMContentLoaded",()=>{
+    apply();
+    const note=document.createElement("div");
+    note.style.cssText="margin:10px 0;padding:10px 12px;border-radius:12px;background:#fafafa;border:1px solid #e5e7eb;font-size:12px;color:#5b6472";
+    note.innerHTML="<b>データの見方：</b>「確認済み」は市公式資料で確認できた内容。「要確認」は原資料へのリンクから確認してください。アプリ側で政治的な評価や順位付けは行いません。";
+    const target=document.querySelector("#searchView");
+    if(target) target.prepend(note);
+  });
+})();
+</script><script>
+window.VERIFIED_POLICY_DATA_V15 = {"1": {"status": "令和8年度（2026年度）から学校給食費の無償化を実施。", "facts": ["市立小学校・義務教育学校前期課程は、令和8年4月から給食費を無償化。", "中学校・義務教育学校後期課程は、令和8年度は生徒分の徴収額を現行の310円に据え置き、改定後との差額を市が負担。", "令和8年度一般会計予算では、小学校給食費30億4,042万円、中学校給食費17億629万9千円を計上。"], "sources": [["学校給食費について（市公式）", "https://www.city.toyonaka.osaka.jp/kosodate/gakkou/kyushoku/kyushokuhi.html"], ["令和8年度予算説明書（市公式PDF）", "https://www.city.toyonaka.osaka.jp/joho/shigikai_anken/r8/r8_3gatuteirei0217.files/teiansetumei_tousyo_0224.pdf"]]}, "19": {"status": "令和8年5月から「ユースモ！#若者チャレンジらぼ！」の募集を開始。", "facts": ["18歳～30歳（高校生除く）の個人・グループを対象に、豊中でやりたいことを企画から実践まで支援する事業。", "令和8年5月12日に市が参加者募集開始を報道発表。", "市の令和8年6月号では、採用企画への支援内容を案内。"], "sources": [["令和8年度報道提供資料（市公式）", "https://www.city.toyonaka.osaka.jp/joho/kouhou/news_release/r8_04-09.html"], ["広報とよなか 令和8年6月号（市公式）", "https://www.city.toyonaka.osaka.jp/joho/kouhou/kouhou/koho_text/202606text.html"]]}, "27": {"status": "北部地域の「Mina Notte（みなのって）」は令和8年4月1日から運行開始。", "facts": ["北部地域では柴原阪大前駅を起点とする2ルートで令和8年4月1日から運行開始。", "市は、買い物や通院などの日常移動を支える交通手段として位置付けている。", "令和7年度の前期基本政策の進捗資料では、Mina Notte予約システムの導入を実績として掲載。"], "sources": [["北部地域乗合タクシー Mina Notte（市長公務記録）", "https://www.city.toyonaka.osaka.jp/shicho/kongetu_sichou/202603.html"], ["令和8年4月号広報（市公式）", "https://www.city.toyonaka.osaka.jp/joho/kouhou/kouhou/koho_pdf/202604pdf.html"], ["令和8年5月号広報（市公式）", "https://www.city.toyonaka.osaka.jp/joho/kouhou/kouhou/koho_text/202605text.html"]]}, "54": {"status": "豊中つばさ公園「ma-zika」のライブカメラ設置に向けた取組を開始。", "facts": ["令和8年4月27日、市はライブカメラ設置に向けたクラウドファンディング開始を報道発表。", "基本政策54は、豊中つばさ公園「ma-zika」を起点とした観光呼び込み。"], "sources": [["令和8年度報道提供資料（市公式）", "https://www.city.toyonaka.osaka.jp/joho/kouhou/news_release/r8_04-09.html"]]}};
+(function(){
+  function install(){
+    if(!window.items || !window.VERIFIED_POLICY_DATA_V15) return;
+    for(const [id,d] of Object.entries(window.VERIFIED_POLICY_DATA_V15)){
+      const x=window.items.find(i=>String(i.id)===id);
+      if(!x) continue;
+      x.verified=d.status;
+      x.facts=d.facts||[];
+      x.sources=d.sources||[];
+      x.keywords=[...(x.keywords||[])];
+    }
+    if(typeof window.render==="function") window.render();
+  }
+  window.addEventListener("DOMContentLoaded",install);
+})();
+</script><script>
+window.VERIFIED_POLICY_DATA_V16 = {"2": {"status": "令和9年（2027年）9月から第一子の0～2歳児保育料を無償化することを市が公表。", "facts": ["豊中市は2026年8月17日に、第一子の0～2歳児保育料を2027年9月から無償化すると公表。", "現在は、国制度に加え、豊中市独自に第二子以降の0～2歳児保育料無償化を2023年4月から実施している。"], "sources": [["0～2歳児保育料の無償化（市公式・市民の声）", "https://www.city.toyonaka.osaka.jp/joho/sanka/koe/shimin_koe/2026_05.html"], ["令和8年度予算（市公式）", "https://www.city.toyonaka.osaka.jp/joho/zaisei/yosan/r8yosan.html"]]}};
+(function(){
+  function merge(){
+    if(!window.items)return;
+    for(const [id,d] of Object.entries(window.VERIFIED_POLICY_DATA_V16)){
+      const x=window.items.find(i=>String(i.id)===id);
+      if(x){x.verified=d.status;x.facts=d.facts;x.sources=d.sources;}
+    }
+    if(typeof window.render==="function") window.render();
+  }
+  window.addEventListener("DOMContentLoaded",merge);
+})();
+</script><script>
+window.POLICY_BUDGET_DATA_V17 = {"1": {"fy2026": [["小学校給食費", "3,204,042千円", "令和8年度当初予算"], ["中学校給食費", "1,706,299千円", "令和8年度当初予算"]], "note": "予算説明書の款・項・目ベース。政策全体の総事業費ではなく、給食費の予算額として表示。"}};
+(function(){
+  function addBudget(){
+    if(!window.items)return;
+    const box=document.getElementById("detailBody");
+    if(!box || box.dataset.budgetV17) return;
+    const id=window.__openedPolicyId;
+    const d=window.POLICY_BUDGET_DATA_V17[String(id)];
+    if(!d)return;
+    box.dataset.budgetV17="1";
+    const rows=d.fy2026.map(r=>'<tr><td style="padding:7px;border-bottom:1px solid #eee">'+r[0]+'</td><td style="padding:7px;border-bottom:1px solid #eee;text-align:right;font-weight:700">'+r[1]+'</td><td style="padding:7px;border-bottom:1px solid #eee">'+r[2]+'</td></tr>').join("");
+    box.insertAdjacentHTML("beforeend",
+      '<div class="section"><h3>予算（確認済み）</h3>'+
+      '<table style="width:100%;border-collapse:collapse;background:#fff"><thead><tr><th style="text-align:left;padding:7px">項目</th><th style="text-align:right;padding:7px">金額</th><th style="text-align:left;padding:7px">年度</th></tr></thead><tbody>'+rows+'</tbody></table>'+
+      '<p class="meta" style="margin-top:8px">'+d.note+'</p>'+
+      '<a class="source" target="_blank" rel="noopener" href="https://www.city.toyonaka.osaka.jp/joho/shigikai_anken/r8/r8_3gatuteirei0217.files/teiansetumei_tousyo_0224.pdf">令和8年度予算説明書（市公式） ↗</a></div>');
+  }
+  const old=window.openDetail;
+  if(typeof old==="function"){
+    window.openDetail=function(id){ window.__openedPolicyId=id; const r=old.apply(this,arguments); setTimeout(addBudget,50); return r; };
+  }
+})();
+</script>
+<script>
+window.V18_BUDGET_DATA = {"city_fy2026": {"general_account": "2,069億4,671万9千円", "all_accounts": "3,680億3,795万2千円", "source": "https://www.city.toyonaka.osaka.jp/joho/zaisei/yosan/r8yosan.html"}, "policy_1": {"items": [{"year": "令和8年度", "label": "小学校給食費", "amount": "30億4,042万円", "kind": "予算"}, {"year": "令和8年度", "label": "中学校給食費", "amount": "17億629万9千円", "kind": "予算"}], "note": "市公式の令和8年度予算説明書に掲載された給食費予算。政策No.1そのものの総事業費ではありません。", "source": "https://www.city.toyonaka.osaka.jp/joho/shigikai_anken/r8/r8_3gatuteirei0217.files/teiansetumei_tousyo_0224.pdf"}};
+(function(){
+  function renderFinance(){
+    const box=document.getElementById("detailBody");
+    const id=window.__openedPolicyId;
+    if(!box || box.dataset.v18finance) return;
+    const d=window.V18_BUDGET_DATA["policy_"+id];
+    if(!d) return;
+    box.dataset.v18finance="1";
+    const rows=d.items.map(x=>"<tr><td>"+x.year+"</td><td>"+x.label+"</td><td style='text-align:right;font-weight:700'>"+x.amount+"</td><td>"+x.kind+"</td></tr>").join("");
+    box.insertAdjacentHTML("beforeend",
+      "<div class='section'><h3>予算・決算データ</h3>"+
+      "<table style='width:100%;border-collapse:collapse'><thead><tr><th style='text-align:left;padding:7px'>年度</th><th style='text-align:left;padding:7px'>項目</th><th style='text-align:right;padding:7px'>金額</th><th style='text-align:left;padding:7px'>区分</th></tr></thead>"+
+      "<tbody>"+rows+"</tbody></table>"+
+      "<p class='meta'>"+d.note+"</p>"+
+      "<a class='source' href='"+d.source+"' target='_blank' rel='noopener'>金額の原資料を開く ↗</a></div>");
+  }
+  const old=window.openDetail;
+  if(typeof old==="function"){
+    window.openDetail=function(id){
+      window.__openedPolicyId=id;
+      const r=old.apply(this,arguments);
+      setTimeout(renderFinance,80);
+      return r;
+    };
+  }
+  window.addEventListener("DOMContentLoaded",function(){
+    const target=document.getElementById("searchView");
+    if(target){
+      const d=window.V18_BUDGET_DATA.city_fy2026;
+      const el=document.createElement("div");
+      el.style.cssText="margin:10px 0;padding:12px;border:1px solid #e1e7ef;border-radius:12px;background:#f8fafc;font-size:13px";
+      el.innerHTML="<b>参考：豊中市全体の令和8年度当初予算</b><br>一般会計 "+d.general_account+" ／ 全会計 "+d.all_accounts+
+        "<br><span style='color:#667085'>※これは個別政策の予算ではありません。市全体の参考値です。</span>";
+      target.prepend(el);
+    }
+  });
+})();
+</script>
+
+<script>
+window.V19_FINANCE={"1": {"years": [{"year": "令和8年度", "budget": [["小学校給食費", "30億4,042万円"], ["中学校給食費", "17億629万9千円"]], "settlement": []}], "note": "令和8年度の予算額を市公式予算説明書から確認。令和8年度は年度途中のため、決算欄は未掲載です。", "source": "https://www.city.toyonaka.osaka.jp/joho/shigikai_anken/r8/r8_3gatuteirei0217.files/teiansetumei_tousyo_0224.pdf"}};
+(function(){
+  function addFinance(){
+    const box=document.getElementById("detailBody");
+    const id=window.__openedPolicyId;
+    const d=window.V19_FINANCE[String(id)];
+    if(!box||!d||box.dataset.v19finance) return;
+    box.dataset.v19finance="1";
+    let html='<div class="section"><h3>年度別・予算／決算</h3>';
+    html+='<div style="overflow:auto"><table style="width:100%;border-collapse:collapse;min-width:520px">';
+    html+='<thead><tr><th style="text-align:left;padding:8px;border-bottom:2px solid #ddd">年度</th><th style="text-align:left;padding:8px;border-bottom:2px solid #ddd">予算</th><th style="text-align:left;padding:8px;border-bottom:2px solid #ddd">決算</th></tr></thead><tbody>';
+    d.years.forEach(y=>{
+      const b=y.budget.length?y.budget.map(r=>r[0]+"："+r[1]).join("<br>"):"—";
+      const k=y.settlement.length?y.settlement.map(r=>r[0]+"："+r[1]).join("<br>"):"—";
+      html+="<tr><td style='padding:8px;border-bottom:1px solid #eee;font-weight:700'>"+y.year+"</td><td style='padding:8px;border-bottom:1px solid #eee'>"+b+"</td><td style='padding:8px;border-bottom:1px solid #eee'>"+k+"</td></tr>";
+    });
+    html+='</tbody></table></div>';
+    html+='<p class="meta" style="margin-top:9px">'+d.note+'</p>';
+    html+='<a class="source" target="_blank" rel="noopener" href="'+d.source+'">金額の原資料を確認 ↗</a></div>';
+    box.insertAdjacentHTML("beforeend",html);
+  }
+  const old=window.openDetail;
+  if(typeof old==="function"){
+    window.openDetail=function(id){
+      window.__openedPolicyId=id;
+      const r=old.apply(this,arguments);
+      setTimeout(addFinance,100);
+      return r;
+    };
+  }
+})();
+</script>
+
+<script>
+window.POLICY_CHART_V20 = {
+  sections:[
+    ["purpose","1. 政策の目的"],
+    ["history","2. これまでの経緯"],
+    ["projects","3. 関連する事業"],
+    ["budget","4. 年度別予算"],
+    ["settlement","5. 年度別決算"],
+    ["progress","6. 実施状況"],
+    ["evaluation","7. 政策評価"],
+    ["council","8. 市議会での議論"],
+    ["citizen","9. 市民の意見"],
+    ["next","10. 現在の課題・今後"]
+  ]
+};
+(function(){
+  function addChart(){
+    const box=document.getElementById("detailBody");
+    if(!box || box.dataset.chartV20) return;
+    box.dataset.chartV20="1";
+    const links = [
+      ["予算・決算","https://www.city.toyonaka.osaka.jp/joho/zaisei/degiyosan.html"],
+      ["実施計画","https://www.city.toyonaka.osaka.jp/joho/keikaku/soukei4/jijjikeikaku.html"],
+      ["政策評価","https://www.city.toyonaka.osaka.jp/joho/keikaku/gyousei_hyouka/20190524135532126.html"],
+      ["基本政策","https://www.city.toyonaka.osaka.jp/joho/keikaku/kihon_seisaku/R8_kihonseisaku.html"]
+    ];
+    const cards=window.POLICY_CHART_V20.sections.map((x,i)=>{
+      const ready = [3,4,6,7].includes(i) ? "公式資料へ" : "資料を確認";
+      return "<div style='padding:10px 12px;border:1px solid #e5e7eb;border-radius:11px;background:#fff'><b>"+x[1]+"</b><div style='font-size:12px;color:#667085;margin-top:3px'>"+ready+"・推測で補完しない</div></div>";
+    }).join("");
+    box.insertAdjacentHTML("afterbegin",
+      "<div class='section' style='background:#f8fafc'><h3>政策カルテ10項目</h3>"+
+      "<div style='display:grid;gap:8px'>"+cards+"</div>"+
+      "<p class='meta' style='margin-top:9px'>「確認済み」は市公式資料等で確認できた情報、「確認中」は原資料をまだ個別整理していない項目です。</p></div>");
+  }
+  const old=window.openDetail;
+  if(typeof old==="function"){
+    window.openDetail=function(id){window.__openedPolicyId=id;const r=old.apply(this,arguments);setTimeout(addChart,80);return r;};
+  }
+})();
+</script>
+
+<script>
+window.TOYONAKA_FINAL_DATA = {"last_verified": "2026-09-23", "official_sources": [["豊中市・基本政策（80項目）", "https://www.city.toyonaka.osaka.jp/joho/keikaku/kihon_seisaku/R8_kihonseisaku.html"], ["豊中市デジタル予算書（予算・決算）", "https://www.city.toyonaka.osaka.jp/joho/zaisei/degiyosan.html"], ["豊中市・実施計画", "https://www.city.toyonaka.osaka.jp/joho/keikaku/soukei4/jijjikeikaku.html"], ["豊中市・政策評価", "https://www.city.toyonaka.osaka.jp/joho/keikaku/gyousei_hyouka/20190524135532126.html"], ["豊中市・令和7年度決算", "https://www.city.toyonaka.osaka.jp/joho/zaisei/kessan/r7kessan.html"], ["豊中市・令和8年9月定例会提出案件", "https://www.city.toyonaka.osaka.jp/joho/shigikai_anken/r8/r8_9gatuteirei0903.html"], ["豊中市・過去の基本政策（令和4～7年度）", "https://www.city.toyonaka.osaka.jp/joho/keikaku/kihon_seisaku/r5_kihonseisaku.html"]], "policy_evidence": {"1": ["令和8年度基本政策No.1。学校給食費に関する市公式資料を確認できます。"], "2": ["令和8年度基本政策No.2。0～2歳児保育料の制度情報を市公式資料で確認できます。"], "9": ["令和8年度基本政策No.9。AI子育て相談に関する市公式資料を確認できます。"], "11": ["令和8年度基本政策No.11。学びの多様化学校・不登校相談支援センターを掲載。"], "19": ["令和8年5月12日、市は「ユースモ！#若者チャレンジらぼ！」の参加者募集開始を報道発表。"], "26": ["令和8年度基本政策No.26。全自動EVバス走行を官民連携で実現する方針。"], "27": ["令和7年度の前期基本政策の進捗として、Mina Notte予約システム導入を市が公表。"], "54": ["令和8年4月27日、市は豊中つばさ公園「ma-zika」のライブカメラ設置へクラウドファンディング開始を報道発表。"], "66": ["令和8年度基本政策No.66。大阪国際空港をもっと便利にする方針。"], "71": ["令和8年度基本政策No.71。デジタルを活かした市政参画・意見表明のしくみを構築する方針。"], "79": ["令和8年度基本政策No.79。AI・ロボットなど最先端技術による地域課題解決・業務刷新を掲載。"], "80": ["令和8年度基本政策No.80。AI副市長を導入する方針を掲載。"]}};
+(function(){
+  function addFinalHeader(){
+    const target = document.querySelector("#searchView");
+    if(!target || document.getElementById("finalDataHeader")) return;
+    const d=window.TOYONAKA_FINAL_DATA;
+    const el=document.createElement("div");
+    el.id="finalDataHeader";
+    el.style.cssText="margin:12px 0;padding:14px;border:1px solid #dbe4ee;border-radius:14px;background:#fff";
+    el.innerHTML="<div style='font-weight:700;font-size:15px;margin-bottom:5px'>市民向け・政策確認データベース</div>"+
+      "<div style='font-size:13px;color:#475467;line-height:1.6'>80の基本政策を入口に、実施計画・予算・決算・政策評価・市議会資料へつなげます。政治的な順位付けや評価は行わず、確認できた一次資料を示します。</div>"+
+      "<div style='font-size:11px;color:#667085;margin-top:7px'>最終確認日："+d.last_verified+" ／ データは市公式資料の更新により変わる場合があります。</div>";
+    target.prepend(el);
+  }
+  function addSources(){
+    const box=document.getElementById("detailBody");
+    if(!box || box.dataset.finalSources) return;
+    box.dataset.finalSources="1";
+    const d=window.TOYONAKA_FINAL_DATA;
+    const links=d.official_sources.map(x=>"<a class='source' target='_blank' rel='noopener' href='"+x[1]+"'>"+x[0]+" ↗</a>").join("");
+    box.insertAdjacentHTML("beforeend","<div class='section'><h3>公式資料の入口</h3>"+links+"</div>");
+  }
+  window.addEventListener("DOMContentLoaded",addFinalHeader);
+  const old=window.openDetail;
+  if(typeof old==="function"){
+    window.openDetail=function(id){
+      window.__openedPolicyId=id;
+      const r=old.apply(this,arguments);
+      setTimeout(addSources,100);
+      return r;
+    };
+  }
+})();
+</script>
+
+<div id="finalFooter" style="margin:24px 0 8px;padding:14px;border-top:1px solid #e5e7eb;color:#667085;font-size:12px;line-height:1.7">
+<b>このアプリのデータ方針</b><br>
+・市公式資料、議会公開資料など確認可能な一次資料を優先します。<br>
+・予算と決算、予定と実績、市の説明とアプリの整理を区別します。<br>
+・確認できない金額や因果関係は推測で補いません。<br>
+・特定の政党・議員・政策への賛否や順位付けは行いません。市民が原資料を確認して判断できることを目的とします。
+</div>
+<script>
+window.TOYONAKA_POLICY_{"verified_at": "2026-09-23", "official_basic_policy": "https://www.city.toyonaka.osaka.jp/joho/keikaku/kihon_seisaku/R8_kihonseisaku.html", "budget": "https://www.city.toyonaka.osaka.jp/joho/zaisei/degiyosan.html", "implementation_plan": "https://www.city.toyonaka.osaka.jp/joho/keikaku/soukei4/jijjikeikaku.html", "evaluation": "https://www.city.toyonaka.osaka.jp/joho/keikaku/gyousei_hyouka/20190524135532126.html", "settlement": "https://www.city.toyonaka.osaka.jp/joho/zaisei/kessan/r7kessan.html", "policies": {"1": {"name": "中学校給食費の無償化", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "2": {"name": "0～2歳保育料の無償化", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "3": {"name": "妊産婦のタクシー利用を助成", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "4": {"name": "中学生の習い事などを助成", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "5": {"name": "無痛分娩費用を助成", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "6": {"name": "放課後の学校を新しい居場所に", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "7": {"name": "こども園でてぶら登園を実現", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "8": {"name": "子どもが天候にかかわらず思いっきり遊べる公園・施設づくり", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "9": {"name": "24時間対応のAI子育て相談アプリを導入", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "10": {"name": "千里コラボに子育て支援拠点ほっぺ分室を設置", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "11": {"name": "学びの多様化学校（不登校特例校）および不登校相談支援センターを開設", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "12": {"name": "フリースクール利用料の助成", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "13": {"name": "老朽化した学校を計画的に建替え", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "14": {"name": "小学校での教科担任制を拡大", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "15": {"name": "学校の水泳授業を民間プールで実施", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "16": {"name": "トップレベルの英語教育でグローバル人材を育成", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "17": {"name": "外部人材による最先端のAI・デジタル教育", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "18": {"name": "豊中ふるさと教育の実施", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "19": {"name": "若者チャレンジ応援事業", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "20": {"name": "大学等の奨学金返還支援", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "21": {"name": "待機児童ゼロを実現", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "22": {"name": "公民連携で新しい“せんちゅう”を", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "23": {"name": "東西軸の核となる曽根駅周辺エリアを文化・健康ゾーンとしてバージョンアップ", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "24": {"name": "南部地域のインフラ整備を推進", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "25": {"name": "服部天神駅前の安全対策ほか、各駅を拠点とした魅力向上の取組みを推進", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "26": {"name": "全自動のEVバス走行を官民連携で実現", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "27": {"name": "乗合タクシー「みなのって」の展開など公共交通の充実", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "28": {"name": "図書館を核とした本のあるまちづくりを推進", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "29": {"name": "みんなの憩いの場として公園を大改革", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "30": {"name": "公民連携で歩道やオープンスペースに潤いを", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "31": {"name": "公民連携で脱炭素社会を実現", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "32": {"name": "路上喫煙禁止の強化と分煙環境の整備", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "33": {"name": "生活インフラ防災対策の強化", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "34": {"name": "安否確認のデジタル化、避難に支援が必要な方を個別サポートするしくみを強化", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "35": {"name": "災害時の司令塔となる危機管理センターを整備", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "36": {"name": "個々の健診や予防接種のデータを活かした健康づくり", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "37": {"name": "ヒアリングフレイル対策の強化", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "38": {"name": "HPVワクチンの男性接種費用を助成", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "39": {"name": "専門機関・保健所による医療・科学的な視点で介護予防をサポート", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "40": {"name": "豊中病院を阪大病院・国循とともに圏域の核となる高度医療機関に", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "41": {"name": "子どもから高齢者までみんなが集える地域交流の場を創設", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "42": {"name": "ボランティア参加と支えあいを促進するしくみづくり", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "43": {"name": "コミュニティ政策の深化と地域の支えあい強化", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "44": {"name": "学び・つながりなど高齢者の元気をサポート", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "45": {"name": "子育て中の方やシニアの方の柔軟な働き方を支援", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "46": {"name": "シングルマザー・ファザーのサポート充実", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "47": {"name": "女性活躍をサポートする取組みを強化", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "48": {"name": "お一人暮らしの高齢者などのペットの一時預かりなどを支援", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "49": {"name": "不妊治療のサポート充実", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "50": {"name": "プロ・スポーツチームを誘致", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "51": {"name": "日本センチュリー交響楽団をはじめまちぐるみで音楽・文化を", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "52": {"name": "豊中の魅力・政策に共感する情報発信", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "53": {"name": "営業・広報専門官を配置し、投資財源を確保", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "54": {"name": "豊中つばさ公園『ma‐zika』を起点とした観光呼び込み", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "55": {"name": "思いっきり体を動かせるスポーツ環境を整備", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "56": {"name": "教育×企業×デジタルによる豊中発イノベーションの創出・循環", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "57": {"name": "魅力・活力の視点でハード・ソフト両面から政策を推進", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "58": {"name": "産官学連携でスタートアップや起業をサポート", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "59": {"name": "千里中央にビジネスサポート拠点を設置", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "60": {"name": "ふるさと納税を活かした地域経済の活性化", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "61": {"name": "地域特性を活かした企業・民間サービスの誘致", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "62": {"name": "女性と企業のマッチング支援を強化", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "63": {"name": "豊中にゆかりのある企業等との共創を促進", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "64": {"name": "とよなかアンバサダーを任命し、まちの魅力を全国に発信", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "65": {"name": "地域資源を活かし、地域での学びと活動の循環を向上", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "66": {"name": "大阪国際空港をもっと便利に", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "67": {"name": "窓口サービスのレベルアップ", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "68": {"name": "おくやみ窓口の設置", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "69": {"name": "マーケティング組織を新設", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "70": {"name": "ご寄附により施策の応援をいただけるようなしくみを構築", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "71": {"name": "デジタルを活かした市政参画・意見表明のしくみを構築", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "72": {"name": "民間企業等への職員派遣と外部人材の受入れ", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "73": {"name": "特定の専門スキルをもつ副業人材を積極的に活用", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "74": {"name": "民間企業や他の自治体と積極的に連携しレベルアップ", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "75": {"name": "未来への投資を確実に実行するための財務マネジメント", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "76": {"name": "市有資産を経営的視点をもって整備・活用・リニューアル", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "77": {"name": "都市経営を推進し改革を止めない組織体制の強化", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "78": {"name": "職員のがんばりを高める人事給与制度の構築", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "79": {"name": "AI・ロボットなど最先端技術で地域課題解決・業務刷新", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "80": {"name": "AI副市長を導入", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}}}_FINAL = {"verified_at": "2026-09-23", "official_basic_policy": "https://www.city.toyonaka.osaka.jp/joho/keikaku/kihon_seisaku/R8_kihonseisaku.html", "budget": "https://www.city.toyonaka.osaka.jp/joho/zaisei/degiyosan.html", "implementation_plan": "https://www.city.toyonaka.osaka.jp/joho/keikaku/soukei4/jijjikeikaku.html", "evaluation": "https://www.city.toyonaka.osaka.jp/joho/keikaku/gyousei_hyouka/20190524135532126.html", "settlement": "https://www.city.toyonaka.osaka.jp/joho/zaisei/kessan/r7kessan.html", "policies": {"1": {"name": "中学校給食費の無償化", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "2": {"name": "0～2歳保育料の無償化", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "3": {"name": "妊産婦のタクシー利用を助成", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "4": {"name": "中学生の習い事などを助成", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "5": {"name": "無痛分娩費用を助成", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "6": {"name": "放課後の学校を新しい居場所に", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "7": {"name": "こども園でてぶら登園を実現", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "8": {"name": "子どもが天候にかかわらず思いっきり遊べる公園・施設づくり", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "9": {"name": "24時間対応のAI子育て相談アプリを導入", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "10": {"name": "千里コラボに子育て支援拠点ほっぺ分室を設置", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "11": {"name": "学びの多様化学校（不登校特例校）および不登校相談支援センターを開設", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "12": {"name": "フリースクール利用料の助成", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "13": {"name": "老朽化した学校を計画的に建替え", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "14": {"name": "小学校での教科担任制を拡大", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "15": {"name": "学校の水泳授業を民間プールで実施", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "16": {"name": "トップレベルの英語教育でグローバル人材を育成", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "17": {"name": "外部人材による最先端のAI・デジタル教育", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "18": {"name": "豊中ふるさと教育の実施", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "19": {"name": "若者チャレンジ応援事業", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "20": {"name": "大学等の奨学金返還支援", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "21": {"name": "待機児童ゼロを実現", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "22": {"name": "公民連携で新しい“せんちゅう”を", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "23": {"name": "東西軸の核となる曽根駅周辺エリアを文化・健康ゾーンとしてバージョンアップ", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "24": {"name": "南部地域のインフラ整備を推進", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "25": {"name": "服部天神駅前の安全対策ほか、各駅を拠点とした魅力向上の取組みを推進", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "26": {"name": "全自動のEVバス走行を官民連携で実現", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "27": {"name": "乗合タクシー「みなのって」の展開など公共交通の充実", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "28": {"name": "図書館を核とした本のあるまちづくりを推進", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "29": {"name": "みんなの憩いの場として公園を大改革", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "30": {"name": "公民連携で歩道やオープンスペースに潤いを", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "31": {"name": "公民連携で脱炭素社会を実現", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "32": {"name": "路上喫煙禁止の強化と分煙環境の整備", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "33": {"name": "生活インフラ防災対策の強化", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "34": {"name": "安否確認のデジタル化、避難に支援が必要な方を個別サポートするしくみを強化", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "35": {"name": "災害時の司令塔となる危機管理センターを整備", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "36": {"name": "個々の健診や予防接種のデータを活かした健康づくり", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "37": {"name": "ヒアリングフレイル対策の強化", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "38": {"name": "HPVワクチンの男性接種費用を助成", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "39": {"name": "専門機関・保健所による医療・科学的な視点で介護予防をサポート", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "40": {"name": "豊中病院を阪大病院・国循とともに圏域の核となる高度医療機関に", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "41": {"name": "子どもから高齢者までみんなが集える地域交流の場を創設", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "42": {"name": "ボランティア参加と支えあいを促進するしくみづくり", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "43": {"name": "コミュニティ政策の深化と地域の支えあい強化", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "44": {"name": "学び・つながりなど高齢者の元気をサポート", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "45": {"name": "子育て中の方やシニアの方の柔軟な働き方を支援", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "46": {"name": "シングルマザー・ファザーのサポート充実", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "47": {"name": "女性活躍をサポートする取組みを強化", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "48": {"name": "お一人暮らしの高齢者などのペットの一時預かりなどを支援", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "49": {"name": "不妊治療のサポート充実", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "50": {"name": "プロ・スポーツチームを誘致", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "51": {"name": "日本センチュリー交響楽団をはじめまちぐるみで音楽・文化を", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "52": {"name": "豊中の魅力・政策に共感する情報発信", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "53": {"name": "営業・広報専門官を配置し、投資財源を確保", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "54": {"name": "豊中つばさ公園『ma‐zika』を起点とした観光呼び込み", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "55": {"name": "思いっきり体を動かせるスポーツ環境を整備", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "56": {"name": "教育×企業×デジタルによる豊中発イノベーションの創出・循環", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "57": {"name": "魅力・活力の視点でハード・ソフト両面から政策を推進", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "58": {"name": "産官学連携でスタートアップや起業をサポート", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "59": {"name": "千里中央にビジネスサポート拠点を設置", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "60": {"name": "ふるさと納税を活かした地域経済の活性化", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "61": {"name": "地域特性を活かした企業・民間サービスの誘致", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "62": {"name": "女性と企業のマッチング支援を強化", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "63": {"name": "豊中にゆかりのある企業等との共創を促進", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "64": {"name": "とよなかアンバサダーを任命し、まちの魅力を全国に発信", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "65": {"name": "地域資源を活かし、地域での学びと活動の循環を向上", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "66": {"name": "大阪国際空港をもっと便利に", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "67": {"name": "窓口サービスのレベルアップ", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "68": {"name": "おくやみ窓口の設置", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "69": {"name": "マーケティング組織を新設", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "70": {"name": "ご寄附により施策の応援をいただけるようなしくみを構築", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "71": {"name": "デジタルを活かした市政参画・意見表明のしくみを構築", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "72": {"name": "民間企業等への職員派遣と外部人材の受入れ", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "73": {"name": "特定の専門スキルをもつ副業人材を積極的に活用", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "74": {"name": "民間企業や他の自治体と積極的に連携しレベルアップ", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "75": {"name": "未来への投資を確実に実行するための財務マネジメント", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "76": {"name": "市有資産を経営的視点をもって整備・活用・リニューアル", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "77": {"name": "都市経営を推進し改革を止めない組織体制の強化", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "78": {"name": "職員のがんばりを高める人事給与制度の構築", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "79": {"name": "AI・ロボットなど最先端技術で地域課題解決・業務刷新", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "80": {"name": "AI副市長を導入", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}}};
+(function(){
+  function addRegistry(){
+    if(window.__registryAdded) return;
+    window.__registryAdded=true;
+    const target=document.querySelector("#searchView");
+    if(!target) return;
+    const d=window.TOYONAKA_POLICY_{"verified_at": "2026-09-23", "official_basic_policy": "https://www.city.toyonaka.osaka.jp/joho/keikaku/kihon_seisaku/R8_kihonseisaku.html", "budget": "https://www.city.toyonaka.osaka.jp/joho/zaisei/degiyosan.html", "implementation_plan": "https://www.city.toyonaka.osaka.jp/joho/keikaku/soukei4/jijjikeikaku.html", "evaluation": "https://www.city.toyonaka.osaka.jp/joho/keikaku/gyousei_hyouka/20190524135532126.html", "settlement": "https://www.city.toyonaka.osaka.jp/joho/zaisei/kessan/r7kessan.html", "policies": {"1": {"name": "中学校給食費の無償化", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "2": {"name": "0～2歳保育料の無償化", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "3": {"name": "妊産婦のタクシー利用を助成", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "4": {"name": "中学生の習い事などを助成", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "5": {"name": "無痛分娩費用を助成", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "6": {"name": "放課後の学校を新しい居場所に", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "7": {"name": "こども園でてぶら登園を実現", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "8": {"name": "子どもが天候にかかわらず思いっきり遊べる公園・施設づくり", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "9": {"name": "24時間対応のAI子育て相談アプリを導入", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "10": {"name": "千里コラボに子育て支援拠点ほっぺ分室を設置", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "11": {"name": "学びの多様化学校（不登校特例校）および不登校相談支援センターを開設", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "12": {"name": "フリースクール利用料の助成", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "13": {"name": "老朽化した学校を計画的に建替え", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "14": {"name": "小学校での教科担任制を拡大", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "15": {"name": "学校の水泳授業を民間プールで実施", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "16": {"name": "トップレベルの英語教育でグローバル人材を育成", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "17": {"name": "外部人材による最先端のAI・デジタル教育", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "18": {"name": "豊中ふるさと教育の実施", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "19": {"name": "若者チャレンジ応援事業", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "20": {"name": "大学等の奨学金返還支援", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "21": {"name": "待機児童ゼロを実現", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "22": {"name": "公民連携で新しい“せんちゅう”を", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "23": {"name": "東西軸の核となる曽根駅周辺エリアを文化・健康ゾーンとしてバージョンアップ", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "24": {"name": "南部地域のインフラ整備を推進", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "25": {"name": "服部天神駅前の安全対策ほか、各駅を拠点とした魅力向上の取組みを推進", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "26": {"name": "全自動のEVバス走行を官民連携で実現", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "27": {"name": "乗合タクシー「みなのって」の展開など公共交通の充実", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "28": {"name": "図書館を核とした本のあるまちづくりを推進", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "29": {"name": "みんなの憩いの場として公園を大改革", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "30": {"name": "公民連携で歩道やオープンスペースに潤いを", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "31": {"name": "公民連携で脱炭素社会を実現", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "32": {"name": "路上喫煙禁止の強化と分煙環境の整備", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "33": {"name": "生活インフラ防災対策の強化", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "34": {"name": "安否確認のデジタル化、避難に支援が必要な方を個別サポートするしくみを強化", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "35": {"name": "災害時の司令塔となる危機管理センターを整備", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "36": {"name": "個々の健診や予防接種のデータを活かした健康づくり", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "37": {"name": "ヒアリングフレイル対策の強化", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "38": {"name": "HPVワクチンの男性接種費用を助成", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "39": {"name": "専門機関・保健所による医療・科学的な視点で介護予防をサポート", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "40": {"name": "豊中病院を阪大病院・国循とともに圏域の核となる高度医療機関に", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "41": {"name": "子どもから高齢者までみんなが集える地域交流の場を創設", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "42": {"name": "ボランティア参加と支えあいを促進するしくみづくり", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "43": {"name": "コミュニティ政策の深化と地域の支えあい強化", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "44": {"name": "学び・つながりなど高齢者の元気をサポート", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "45": {"name": "子育て中の方やシニアの方の柔軟な働き方を支援", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "46": {"name": "シングルマザー・ファザーのサポート充実", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "47": {"name": "女性活躍をサポートする取組みを強化", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "48": {"name": "お一人暮らしの高齢者などのペットの一時預かりなどを支援", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "49": {"name": "不妊治療のサポート充実", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "50": {"name": "プロ・スポーツチームを誘致", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "51": {"name": "日本センチュリー交響楽団をはじめまちぐるみで音楽・文化を", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "52": {"name": "豊中の魅力・政策に共感する情報発信", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "53": {"name": "営業・広報専門官を配置し、投資財源を確保", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "54": {"name": "豊中つばさ公園『ma‐zika』を起点とした観光呼び込み", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "55": {"name": "思いっきり体を動かせるスポーツ環境を整備", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "56": {"name": "教育×企業×デジタルによる豊中発イノベーションの創出・循環", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "57": {"name": "魅力・活力の視点でハード・ソフト両面から政策を推進", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "58": {"name": "産官学連携でスタートアップや起業をサポート", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "59": {"name": "千里中央にビジネスサポート拠点を設置", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "60": {"name": "ふるさと納税を活かした地域経済の活性化", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "61": {"name": "地域特性を活かした企業・民間サービスの誘致", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "62": {"name": "女性と企業のマッチング支援を強化", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "63": {"name": "豊中にゆかりのある企業等との共創を促進", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "64": {"name": "とよなかアンバサダーを任命し、まちの魅力を全国に発信", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "65": {"name": "地域資源を活かし、地域での学びと活動の循環を向上", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "66": {"name": "大阪国際空港をもっと便利に", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "67": {"name": "窓口サービスのレベルアップ", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "68": {"name": "おくやみ窓口の設置", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "69": {"name": "マーケティング組織を新設", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "70": {"name": "ご寄附により施策の応援をいただけるようなしくみを構築", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "71": {"name": "デジタルを活かした市政参画・意見表明のしくみを構築", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "72": {"name": "民間企業等への職員派遣と外部人材の受入れ", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "73": {"name": "特定の専門スキルをもつ副業人材を積極的に活用", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "74": {"name": "民間企業や他の自治体と積極的に連携しレベルアップ", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "75": {"name": "未来への投資を確実に実行するための財務マネジメント", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "76": {"name": "市有資産を経営的視点をもって整備・活用・リニューアル", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "77": {"name": "都市経営を推進し改革を止めない組織体制の強化", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "78": {"name": "職員のがんばりを高める人事給与制度の構築", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "79": {"name": "AI・ロボットなど最先端技術で地域課題解決・業務刷新", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}, "80": {"name": "AI副市長を導入", "data_state": "基本政策を確認済み。個別の予算・決算・実施状況等は原資料を確認して表示。"}}}_FINAL;
+    const el=document.createElement("div");
+    el.style.cssText="margin:12px 0;padding:12px;border:1px solid #dbe4ee;border-radius:12px;background:#f8fafc;font-size:12px";
+    el.innerHTML="<b>80政策データベース</b><br>基本政策："+Object.keys(d.policies).length+"項目を登録。個別データは確認済みのものだけを「確認済み」として表示し、未確認の金額・実績は推測しません。<br><span style='color:#667085'>基準日："+d.verified_at+"</span>";
+    target.prepend(el);
+  }
+  window.addEventListener("DOMContentLoaded",addRegistry);
+})();
+</script><div style="margin:12px 0;padding:12px;border:1px solid #e5e7eb;border-radius:12px;background:#fff;font-size:12px;color:#475467">
+<b>データ表示のルール</b><br>
+「基本政策を確認済み」＝2026年度の豊中市公式基本政策ページで項目を確認。<br>
+「確認済み」＝関連する一次資料で個別情報まで確認。<br>
+「原資料を確認」＝政策との関連は確認できるが、個別金額・実績等をアプリ側でまだ確定していない項目。<br>
+この区別により、未確認情報を実績として誤表示しません。
+</div></body></html>
