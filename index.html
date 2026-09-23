@@ -483,17 +483,18 @@ function copyText(t){
 window.searchMinutes=function(raw){
   const q=(raw||"").trim();
   if(!q){alert("議事録で検索する言葉を入力してください。");return;}
-  // Open first so iOS Safari treats this as a user-initiated navigation.
-  const w=window.open(MINUTES_URL,"_blank");
+  // The official system does not expose the keyword in its URL, so the app cannot
+  // submit the cross-origin form directly. We make the remaining iPhone steps explicit.
   copyText(q).then(function(){
-    if(!w){alert("豊中市議会の会議録検索画面を開けませんでした。URLを開いて、検索語「"+q+"」を貼り付けてください。")}
-    else {setTimeout(function(){alert("検索語「"+q+"」をコピーしました。会議録検索画面の『検索語』欄に貼り付けて検索してください。")},150)}
+    const w=window.open(MINUTES_URL,"_blank");
+    const msg="検索語「"+q+"」をコピーしました。\n\n① 公式会議録の『検索語』欄をタップ\n② 長押しして『ペースト』\n③ 公式画面の『検索』をタップ\n\n※公式システムの検索フォームは別サイトにあるため、施策カルテから検索ボタンを自動操作することはできません。";
+    if(!w){alert("公式会議録を開けませんでした。\n\n"+msg)}else{setTimeout(function(){alert(msg)},250)}
   });
 };
 function addMinutesBox(){
   const sv=document.getElementById("searchView"); if(!sv||document.getElementById("minutesSearchBox"))return;
   const b=document.createElement("div"); b.id="minutesSearchBox"; b.className="minutes-search-box";
-  b.innerHTML='<div style="font-weight:700;margin-bottom:6px">🗣️ 議事録も探す</div><div class="minutes-search-row"><input id="minutesQ" placeholder="例：給食費、みなのって、不登校、AI子育て"><button class="minutes-btn" onclick="searchMinutes(document.getElementById('minutesQ').value)">会議録検索</button></div><div class="minutes-note">豊中市議会の公式会議録検索システムを開き、入力した検索語をコピーします。会議録は平成元年1月臨時会以降の本会議、平成元年3月以降の委員会が検索対象です。</div><div><span class="minutes-mini">本会議</span><span class="minutes-mini">常任委員会</span><span class="minutes-mini">特別委員会</span><span class="minutes-mini">議会運営委員会</span></div>';
+  b.innerHTML='<div style="font-weight:700;margin-bottom:6px">🗣️ 議事録も探す</div><div class="minutes-search-row"><input id="minutesQ" placeholder="例：給食費、みなのって、不登校、AI子育て"><button class="minutes-btn" onclick="searchMinutes(document.getElementById('minutesQ').value)">会議録検索</button></div><div class="minutes-note">検索語をコピーして豊中市議会の公式会議録検索画面を開きます。公式画面で「検索語」にペーストし、「検索」を押してください。会議録は平成元年1月臨時会以降の本会議、平成元年3月以降の委員会が検索対象です。</div><div><span class="minutes-mini">本会議</span><span class="minutes-mini">常任委員会</span><span class="minutes-mini">特別委員会</span><span class="minutes-mini">議会運営委員会</span></div>';
   const search=sv.querySelector(".search"); if(search) search.after(b); else sv.prepend(b);
 }
 function patchCards(){
