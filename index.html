@@ -498,5 +498,9 @@ const oldOpen=window.openDetail; window.openDetail=function(id){oldOpen(id); set
   const box=document.createElement("div"); box.className="section minutes-detail-btn"; box.innerHTML='<h3>議事録</h3><p class="meta">この政策に関連する言葉を豊中市議会の公式会議録検索システムで探せます。</p><button class="minutes-btn">「'+String(item.name).replace(/</g,"&lt;")+'」を会議録で検索</button>';
   box.querySelector("button").onclick=function(){searchMinutes(item.name)}; d.appendChild(box);
 },50)};
-window.addEventListener("DOMContentLoaded",function(){addMinutesBox(); setInterval(patchCards,500)});
+window.addEventListener("DOMContentLoaded",function(){
+  addMinutesBox();
+  patchCards();
+  setInterval(function(){addMinutesBox();patchCards()},500);
+});
 })();</script></body></html>
